@@ -27,20 +27,25 @@ class BT {
     }
 
 
-    public static boolean contains(BTNode current, int data) {
-            if (current.getData() == data) {
-                return true;
-            }
-            boolean contains = false;
-                if (current.left != null) {
-                    contains = contains(current.getLeft(), data);
+    public boolean contains(BTNode node) {
+        BTNode parent = root;
+        while (node.data!=parent.data) {
+            if (node.data < parent.data) {
+                if (parent.left == null) {
+                    return false;
+                } else {
+                    parent = parent.left;
                 }
-            if (!contains && current.right !=null) {
-                contains = contains(current.getRight(), data);
+            } else {
+                if (parent.right == null) {
+                    return false;
+                } else {
+                    parent = parent.right;
+                }
             }
-
-            return contains;
         }
+        return true;
+    }
 
 
     public int size() {

@@ -4,21 +4,10 @@ class BTNode extends BT
     BTNode left;
     BTNode right;
 
-
-
-    BTNode parent;
     int data;
 
     public BTNode(int data) {
         this.data = data;
-    }
-
-    public BTNode getParent() {
-        return parent;
-    }
-
-    public void setParent(BTNode parrent) {
-        this.parent = parrent;
     }
 
     public BTNode getLeft()
@@ -50,6 +39,7 @@ class BTNode extends BT
         bt.add(3);
         bt.add(7);
         System.out.println(bt.size());
+        System.out.println(bt.contains(new BTNode(0)));
 
 
     }
